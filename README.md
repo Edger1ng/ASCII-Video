@@ -69,18 +69,12 @@ AsciiVideoPlayer.exe --file musicvideo.mp4 --mode low-rgb --fps 30
 
 ## 🖼️ Screenshots / Previews
 
-Add visual previews of your ASCII player in action!
 
-`assets/`
-
-Markdown format:
-
-```md
 ![Color Mode Preview](assets/color_preview.png)
 ![Grayscale Terminal Screenshot](assets/bw_preview.png)
 ![Playback Info](assets/terminal_info.png)
-```
 
+Coming soon!
 
 
 ---
