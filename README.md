@@ -44,7 +44,7 @@ AsciiVideoPlayer.exe --file sample.mp4 --mode bw --width 100 --height 30
 ### 🔹 Example 2: Optimized Full-Color Playback
 
 ```bash
-AsciiVideoPlayer.exe --file anime_clip.mp4 --mode enhanced-rgb --fps 60 --optimize
+AsciiVideoPlayer.exe --file clip.mp4 --mode enhanced-rgb --fps 60 --optimize
 ```
 
 *This mode is ideal for vibrant, fast-paced content and ensures smooth frame transitions.*
