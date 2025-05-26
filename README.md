@@ -71,7 +71,9 @@ AsciiVideoPlayer.exe --file musicvideo.mp4 --mode low-rgb --fps 30
 
 
 ![Color Mode Preview](assets/color_preview.png)
+
 ![Grayscale Terminal Screenshot](assets/bw_preview.png)
+
 ![Playback Info](assets/terminal_info.png)
 
 Coming soon!
