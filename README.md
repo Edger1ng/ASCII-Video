@@ -1,6 +1,6 @@
 # 🎮 ASCII Video Player
 
-A cross-platform console-based video player that renders each frame as ASCII art. Supports color rendering, FPS customization, frame caching optimization, and more.
+A cross-platform console-based video player that renders each frame as ASCII art. Now ships with Python **and C++17** implementations, performance-minded frame caching, enhanced gradients, and richer CLI controls.
 
 ---
 
@@ -14,24 +14,41 @@ A cross-platform console-based video player that renders each frame as ASCII art
 
 ---
 
-## 🚀 C# Usage
+## 🚀 C++ Usage
+
+### Build
 
 ```bash
-AsciiVideoPlayer.exe --file video.mp4 --mode enhanced-rgb --fps 60 --width 120 --height 40 --optimize
+cd cpp
+cmake -S . -B build
+cmake --build build --config Release
+```
+
+### Run
+
+```bash
+./cpp/build/ascii_video_player --file video.mp4 --mode enhanced-rgb --fps 60 --width 120 --height 40 --optimize --show-info
 ```
 
 ---
 
-## 🧪 Command Line Arguments
+## 🧪 Command Line Arguments (Python & C++)
 
-| Argument     | Description                                                               |
-| ------------ | ------------------------------------------------------------------------- |
-| `--file`     | Path to the input video file                                              |
-| `--mode`     | Rendering mode: `enhanced-rgb`, `mid-rgb`, `low-rgb`, `bw`, `enhanced-bw` |
-| `--fps`      | Playback framerate                                                        |
-| `--width`    | Frame width (in characters)                                               |
-| `--height`   | Frame height (in characters)                                              |
-| `--optimize` | Cache frames into memory for optimized playback                           |
+| Argument       | Description                                                                               |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| `--file`       | Path to the input video file                                                              |
+| `--mode`       | Rendering mode: `enhanced-rgb`, `mid-rgb`, `low-rgb`, `bw`, `enhanced-bw`                 |
+| `--fps`        | Playback framerate                                                                        |
+| `--width`      | Frame width (in characters)                                                               |
+| `--height`     | Frame height (in characters)                                                              |
+| `--optimize`   | Cache frames into memory for smoother playback                                            |
+| `--charset`    | Custom character set for shading (defaults to balanced gradient)                          |
+| `--invert`     | Invert the intensity mapping                                                              |
+| `--start`      | Start rendering from this frame number                                                    |
+| `--frames`     | Stop after rendering this many frames (0 = all)                                           |
+| `--no-color`   | Force grayscale output even in RGB modes                                                  |
+| `--downscale`  | Additional downscale factor to speed up rendering                                         |
+| `--show-info`  | Show live FPS counter and progress information                                            |
 
 ### 🔹 Example 1: Basic Grayscale Playback
 
@@ -83,30 +100,23 @@ Coming soon!
 
 ## 🐍 Python Version
 
-The Python implementation is available with identical behavior.
+The Python implementation mirrors the C++ features and adds quick prototyping convenience.
 
 ### ▶️ Python Usage
 
 ```bash
-python ascii_video_player.py --file video.mp4 --mode enhanced-rgb --fps 60 --width 120 --height 40 --optimize
+python ascii_video_player.py --file video.mp4 --mode enhanced-rgb --fps 60 --width 120 --height 40 --optimize --show-info
 ```
 
-It uses OpenCV and `colorama` to render video frames as colorful ASCII blocks in the terminal.
+It uses OpenCV and `colorama` to render video frames as colorful ASCII blocks in the terminal. Use `--downscale 1.5` or `--no-color` to squeeze extra performance out of slower terminals.
 
 ---
 
 ## 📦 Dependencies
 
-### C# Version:
+### C++ Version:
 
-* [.NET 8](https://dotnet.microsoft.com)
-* [OpenCvSharp4](https://github.com/shimat/opencvsharp)
-
-Install via NuGet:
-
-```bash
-Install-Package OpenCvSharp4
-```
+* [OpenCV](https://opencv.org/) (development headers)
 
 ### Python Version:
 
